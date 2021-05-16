@@ -74,6 +74,7 @@ tools/labs/docs/Dockerfile for dependencies):
    labs/networking.rst
    labs/memory_mapping.rst
    labs/device_model.rst
+   labs/kernel_profiling.rst
 
 .. toctree::
    :caption: Useful info
