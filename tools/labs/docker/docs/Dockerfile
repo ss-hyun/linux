@@ -10,7 +10,7 @@ RUN apt-get install -y git
 RUN apt-get install -y python3
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 RUN apt-get install -y python3-pip
-RUN update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
+# RUN update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 RUN apt-get install -y ditaa
 RUN apt-get install -y graphviz
 RUN apt-get install -y imagemagick
@@ -20,6 +20,7 @@ RUN apt-get install -y fonts-noto-cjk
 RUN apt-get install -y latexmk
 RUN apt-get install -y librsvg2-bin
 RUN apt-get install -y texlive-xetex
+RUN pip install 'docutils<0.17' --force-reinstall
 RUN pip install Sphinx==1.6.7 sphinx_rtd_theme hieroglyph==1.0
 # append new packages here, to minimize docker rebuild time
 RUN rm -rf /var/lib/apt/lists/*
