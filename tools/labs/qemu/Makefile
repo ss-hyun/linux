@@ -26,12 +26,15 @@ QEMU_OPTS = -kernel $(ZIMAGE) \
 	-drive file=disk2.img,if=virtio,format=raw \
 	-drive file=mydisk.img,if=virtio,format=raw \
 	--append "root=/dev/vda loglevel=15 console=hvc0" \
-	--display $(QEMU_DISPLAY) -s -m 256
+	--display $(QEMU_DISPLAY) -s -m 256 \
+	-enable-kvm -cpu host
 
-ifdef ENABLE_KVM
-QEMU_OPTS += -enable-kvm -cpu host
 ENABLE_KVM_SUDO = sudo
-endif
+
+#ifdef ENABLE_KVM
+#QEMU_OPTS += -enable-kvm -cpu host
+#ENABLE_KVM_SUDO = sudo
+#endif
 
 boot: .modinst tap0 tap1 pipe1.in pipe1.out pipe2.in pipe2.out disk1.img disk2.img nttcp-run
 	$(ENABLE_KVM_SUDO) ARCH=$(ARCH) qemu/qemu.sh $(QEMU_OPTS)
