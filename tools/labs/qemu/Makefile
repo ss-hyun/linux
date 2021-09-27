@@ -27,7 +27,7 @@ QEMU_OPTS = -kernel $(ZIMAGE) \
 	-drive file=mydisk.img,if=virtio,format=raw \
 	--append "root=/dev/vda loglevel=15 console=hvc0" \
 	--display $(QEMU_DISPLAY) -s -m 256 \
-	-enable-kvm -cpu host
+	-enable-kvm -cpu host -smp 4
 
 ENABLE_KVM_SUDO = sudo
 
