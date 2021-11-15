@@ -12,8 +12,8 @@ YOCTO_URL = http://downloads.yoctoproject.org/releases/yocto/yocto-2.3/machines/
 #YOCTO_IMAGE = core-image-minimal-qemu$(ARCH).ext4
 #YOCTO_IMAGE = core-image-minimal-dev-qemu$(ARCH).ext4
 #YOCTO_IMAGE = core-image-sato-dev-qemu$(ARCH).ext4
-YOCTO_IMAGE = core-image-sato-qemu$(ARCH).ext4
-#YOCTO_IMAGE = core-image-sato-sdk-qemu$(ARCH).ext4
+#YOCTO_IMAGE = core-image-sato-qemu$(ARCH).ext4
+YOCTO_IMAGE = core-image-sato-sdk-qemu$(ARCH).ext4
 
 QEMU_OPTS = -kernel $(ZIMAGE) \
 	-device virtio-serial \
